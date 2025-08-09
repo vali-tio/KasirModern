@@ -29,11 +29,11 @@ class MainActivity : AppCompatActivity() {
         webView.webViewClient = WebViewClient()
         webView.webChromeClient = WebChromeClient()
 
+        // Menghubungkan interface untuk akses dari JS
         webView.addJavascriptInterface(WebAppInterface(this), "AndroidApp")
 
-        webView.loadUrl(
-            "file:///android_asset/kasirmodern_v1_modified.html"
-        )
+        // Memuat file HTML dari folder assets
+        webView.loadUrl("file:///android_asset/kasirmodern_v1_modified.html")
     }
 
     override fun onBackPressed() {
@@ -44,4 +44,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
